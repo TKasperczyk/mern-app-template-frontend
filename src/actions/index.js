@@ -1,9 +1,11 @@
 import {createSocket} from './createSocketAction';
-import {logIn} from './logInAction';
+import {signIn} from './signInAction';
 import {logOut} from './logOutAction';
+import {signUp} from './signUpAction';
 
 export {
     createSocket,
-    logIn,
-    logOut
+    signIn,
+    logOut,
+    signUp
 };

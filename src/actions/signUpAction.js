@@ -1,3 +1,9 @@
+/**
+ * Calls our API and creates a new user with the provided credentials, then logs in the user
+ * Saves a JWT token in localStorage AND in Redux store. Sets the authenticated field in Redux store to true
+ * Redirects the user to the home page
+ */
+
 import axios from 'axios';
 import history from '../history';
 import {
@@ -6,15 +12,9 @@ import {
     AUTH_ERROR,
 } from './types';
 
-/** 
-    Calls our API and logs in the user with provided credentials.
-    Saves a JWT token in localStorage AND in Redux store. Sets the authenticated field in Redux store to true
-    Redirects the user to the home page
-**/
-
-export const logIn = ({login, password}) => async (dispatch) => {
+export const signUp = ({username, password}) => async (dispatch) => {
     try{
-        const response = await axios.post('/api/login', {login, password});
+        const response = await axios.post('/api/signup', {username, password});
         if (response.data.status){
             dispatch({type: AUTH_SUCCESS, payload: response.data.data});
             //We need to store the token in local storage in case of a page refresh

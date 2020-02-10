@@ -54,7 +54,17 @@
       "last 1 safari version"
     ]
   },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tests/setup/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/tests/setup/styleMock.js"
+    }
+  },
   "devDependencies": {
-    "eslint-plugin-react": "^7.17.0"
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "eslint-plugin-react": "^7.17.0",
+    "jest-dom": "^4.0.0",
+    "react-test-renderer": "^16.12.0"
   }
 }

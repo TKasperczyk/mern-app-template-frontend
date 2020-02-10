@@ -4,7 +4,7 @@ import {Router, Route, Switch} from 'react-router-dom';
 import history from '../history';
 
 import Home from './Home';
-import LogIn from './LogIn';
+import SignIn from './SignIn';
 
 const App = () => {
     return (
@@ -12,7 +12,7 @@ const App = () => {
             <Router history={history}>
                 <Switch>
                     <Route path="/" exact component={Home}></Route>
-                    <Route path="/login" exact component={LogIn}></Route>
+                    <Route path="/signin" exact component={SignIn}></Route>
                 </Switch>
             </Router>
         </div>

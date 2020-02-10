@@ -1,11 +1,11 @@
+/**
+ * HOC component allowing to secure other components from unauthorized access
+ * Redirects the user to the sign page if he's not authenticated and tries to access the child (composed) component
+ */
+
 import React from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-
-/**
-    HOC component allowing to secure another component from unauthorized access
-    Redirects the user to the login page if he's not authenticated and tries to access the child (composed) component
-**/
 
 export default (ComposedComponent) => {
     class Authentication extends React.Component{ // eslint-disable-line no-unused-vars
@@ -15,12 +15,12 @@ export default (ComposedComponent) => {
         constructor(props){
             super(props);
             if (!this.props.authenticated){
-                this.props.history.push('/login');
+                this.props.history.push('/signin');
             }
         }
         componentDidUpdate(nextProps){
             if (nextProps.authenticated){
-                this.props.history.push('/login');
+                this.props.history.push('/signin');
             }
         };
         render(){
