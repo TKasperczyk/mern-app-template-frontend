@@ -1,0 +1,5 @@
+---
+exclude_paths:
+  - 'coverage/**'
+  - 'node_modules/**'
+  - 'README.md'
