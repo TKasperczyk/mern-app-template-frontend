@@ -36,8 +36,12 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "send-coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "test-with-coveralls": "CI=true react-scripts test --env=jsdom --coverage --coverageReporters=text-lcov | coveralls",
+    "test-with-coverage": "CI=true react-scripts test --env=jsdom --coverage",
+    "test-watch": "react-scripts test",
+    "test": "CI=true react-scripts test --env=jsdom"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -61,6 +65,7 @@
     }
   },
   "devDependencies": {
+    "coveralls": "^3.0.9",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "eslint-plugin-react": "^7.17.0",

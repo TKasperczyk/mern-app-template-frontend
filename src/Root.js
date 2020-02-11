@@ -17,14 +17,14 @@ export const getStore = ({initialState = {}} = {}) => {
 };
 
 export default ({children, initialState = {}}) => {
-    const potentiallyCreatedStore = getStore({initialState});
+    const store = getStore({initialState});
     //Initiate the AUTH_SUCCESS action if the user is already logged in (e.g. when the page was refreshed)
     const user = localStorage.getItem('user');
     if(user){
         store.dispatch({type: AUTH_SUCCESS});
     }
     return (
-        <Provider store={potentiallyCreatedStore}>
+        <Provider store={store}>
             {children}
         </Provider>
     );
