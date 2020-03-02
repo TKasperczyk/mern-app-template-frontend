@@ -12,6 +12,7 @@ const signUpActionSpy = jest.fn();
 
 describe('<SignIn />', () => {
     beforeEach(() => {
+        jest.clearAllMocks();
         const hoc = enzyme.shallow(
             <Root>
                 <SignIn handleSubmit={
@@ -21,7 +22,7 @@ describe('<SignIn />', () => {
             </Root>
         );
         //Access the underlying component (no need to test redux-form itself, so we're skipping its logic here)
-        wrapped = hoc.find('SignIn').shallow();
+        wrapped = hoc.find(SignIn).shallow();
         //Overwrite Redux-connected actions
         wrapped.setProps({signIn: signInActionSpy, signUp: signUpActionSpy, logOut: logOutActionSpy});
     });
@@ -34,7 +35,7 @@ describe('<SignIn />', () => {
         expect(wrapped.find('Field[name="username"]').length).toBe(1);
         expect(wrapped.find('Field[name="password"]').length).toBe(1);
     });
-    it('calls the SignIn action on button click', () => {
+    it('calls the signIn action on button click', () => {
         expect(signInActionSpy).toHaveBeenCalledTimes(0);
         wrapped.find('button[name="signin"]').simulate('click');
         expect(signInActionSpy).toHaveBeenCalledTimes(1);

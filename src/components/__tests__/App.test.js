@@ -12,6 +12,7 @@ let wrapped;
 
 describe('<App />', () => {
     beforeEach(() => {
+        jest.clearAllMocks();
         wrapped = enzyme.mount(
             <Root initialState={{auth: {authenticated: false}}}>
                 <App />

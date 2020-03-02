@@ -50,8 +50,8 @@ export class Home extends React.Component{
             <div>
                 [{this.props.authenticated ? 'Authenticated' : 'Not authenticated'}]
                 [Pong: {this.state.pongPayload}]
-                <button onClick={() => this.socketEmitHandler({eventName: 'testPing'})}>Ping</button>
-                <button onClick={this.logOutHandler}>Log out</button>
+                <button onClick={() => this.socketEmitHandler({eventName: 'testPing'})} name="ping">Ping</button>
+                <button onClick={this.logOutHandler} name="logout">Log out</button>
             </div>
         );
     };
