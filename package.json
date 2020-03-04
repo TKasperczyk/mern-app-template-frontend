@@ -38,10 +38,10 @@
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "send-coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
-    "test-with-coveralls": "CI=true react-scripts test --env=jsdom --coverage --coverageReporters=text-lcov | coveralls",
-    "test-with-coverage": "CI=true react-scripts test --env=jsdom --coverage",
-    "test-watch": "react-scripts test",
-    "test": "CI=true react-scripts test --env=jsdom"
+    "test-with-coveralls": "CI=true react-scripts test --env=jsdom --coverage --runInBand --coverageReporters=text-lcov | coveralls",
+    "test-with-coverage": "CI=true react-scripts test --env=jsdom --coverage --runInBand",
+    "test-watch": "react-scripts test --runInBand",
+    "test": "CI=true react-scripts test --env=jsdom --runInBand"
   },
   "eslintConfig": {
     "extends": "react-app"

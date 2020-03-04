@@ -19,7 +19,7 @@ export default (ComposedComponent) => {
             }
         }
         componentDidUpdate(nextProps){
-            if (nextProps.authenticated){
+            if (!nextProps.authenticated){
                 this.props.history.push('/signin');
             }
         };

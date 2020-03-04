@@ -33,7 +33,7 @@ const remount = ({
     wrapped.setProps({logOut, socket: socketSpy});
 };
 
-describe('<App />', () => {
+describe('<Home />', () => {
     beforeEach(() => {
         jest.clearAllMocks();
         remount();
