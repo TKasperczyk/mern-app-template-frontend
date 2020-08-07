@@ -17,7 +17,8 @@
     "redux": "^4.0.4",
     "redux-form": "^8.2.6",
     "redux-thunk": "^2.3.0",
-    "socket.io-client": "^2.3.0"
+    "socket.io-client": "^2.3.0",
+    "snyk": "^1.370.0"
   },
   "bugs": {
     "url": "https://github.com/TKasperczyk/mern-app-template/issues"
@@ -41,7 +42,9 @@
     "test-with-coveralls": "CI=true react-scripts test --env=jsdom --coverage --runInBand --coverageReporters=text-lcov | coveralls",
     "test-with-coverage": "CI=true react-scripts test --env=jsdom --coverage --runInBand",
     "test-watch": "react-scripts test --runInBand",
-    "test": "CI=true react-scripts test --env=jsdom --runInBand"
+    "test": "CI=true react-scripts test --env=jsdom --runInBand",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -79,5 +82,6 @@
     "eslint-plugin-react": "^7.18.3",
     "jest-dom": "^4.0.0",
     "react-test-renderer": "^16.12.0"
-  }
+  },
+  "snyk": true
 }
