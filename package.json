@@ -4,7 +4,7 @@
   "description": "A template for a MERN app server frontend",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.1.1",
+    "@testing-library/jest-dom": "^5.11.1",
     "@testing-library/react": "^10.0.0",
     "@testing-library/user-event": "^11.0.0",
     "axios": "^0.19.0",
